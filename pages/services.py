@@ -76,8 +76,11 @@ st.markdown("""<style>
 [data-testid="stHorizontalBlock"] [data-testid="stPopover"] button:focus {
     outline: none !important;
 }
-/* Hide the popover chevron arrow */
-[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button svg {
+/* Hide the popover chevron — SVG and Material Icons text variants */
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button svg,
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button [data-baseweb="icon"],
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button .material-icons,
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button [data-testid="stIconMaterial"] {
     display: none !important;
 }
 [data-testid="stHorizontalBlock"] [data-testid="stPopover"] button p,
