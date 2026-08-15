@@ -2,9 +2,11 @@ import streamlit as st
 import base64
 from pathlib import Path
 
+from PIL import Image as _Image
+
 st.set_page_config(
     page_title="Bayview Living",
-    page_icon="🏔️",
+    page_icon=_Image.open("assets/bvl_inverse_white.png"),
     layout="centered",
     initial_sidebar_state="collapsed",
 )
@@ -34,7 +36,7 @@ section.main > div.block-container {
     margin: 0 auto !important;
 }
 
-/* ── page_link as minimal nav text ── */
+/* ── nav links (page_link renders as a plain <a> tag — instant client-side navigation) ── */
 [data-testid="stPageLink"] {
     display: flex !important;
     justify-content: center !important;
@@ -42,8 +44,6 @@ section.main > div.block-container {
 }
 [data-testid="stPageLink"] a,
 [data-testid="stPageLink-NavLink"] {
-    display: flex !important;
-    justify-content: center !important;
     font-family: 'Raleway', sans-serif !important;
     font-size: 0.65rem !important;
     font-weight: 400 !important;
@@ -53,11 +53,10 @@ section.main > div.block-container {
     text-decoration: none !important;
     background: transparent !important;
     border: none !important;
-    border-radius: 0 !important;
-    padding: 0.15rem 0 !important;
+    padding: 0.3rem 0 !important;
     transition: color 0.2s !important;
 }
-[data-testid="stPageLink"] a:hover { color: #B8923A !important; }
+[data-testid="stPageLink"] a:hover { color: #C9A84C !important; }
 [data-testid="stPageLink"] p {
     font-family: 'Raleway', sans-serif !important;
     font-size: 0.65rem !important;
@@ -245,9 +244,9 @@ st.markdown(
 st.markdown('<div class="nav-gap"></div>', unsafe_allow_html=True)
 _, c1, _, c2, _ = st.columns([2.5, 1, 0.4, 1, 2.5])
 with c1:
-    st.page_link("pages/services.py", label="Services", use_container_width=True)
+    st.page_link(services_page, label="Services", use_container_width=True)
 with c2:
-    st.page_link("pages/contact.py", label="Contact", use_container_width=True)
+    st.page_link(contact_page, label="Contact", use_container_width=True)
 st.markdown('<div class="nav-rule"></div>', unsafe_allow_html=True)
 
 pg.run()
