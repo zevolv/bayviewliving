@@ -1,0 +1,15 @@
+name: The App is Alive
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit URL
+        run: |
+          curl -sL https://bayviewliving.streamlit.app/ > /dev/null
+          echo "App pinged successfully!"
