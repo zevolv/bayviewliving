@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Ping Streamlit URL
         run: |
-          curl -sL https://bayviewliving.streamlit.app > /dev/null
+          curl -sL --max-redirs 100 -b cookies.txt -c cookies.txt https://bayviewliving.streamlit.app > /dev/null
           echo "App pinged successfully!"
