@@ -76,8 +76,11 @@ st.markdown("""<style>
 [data-testid="stHorizontalBlock"] [data-testid="stPopover"] button:focus {
     outline: none !important;
 }
-/* Hide the popover chevron arrow */
-[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button svg {
+/* Hide the popover chevron — SVG and Material Icons text variants */
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button svg,
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button [data-baseweb="icon"],
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button .material-icons,
+[data-testid="stHorizontalBlock"] [data-testid="stPopover"] button [data-testid="stIconMaterial"] {
     display: none !important;
 }
 [data-testid="stHorizontalBlock"] [data-testid="stPopover"] button p,
@@ -102,11 +105,6 @@ st.markdown("""<style>
 [data-baseweb="popover"] li { color: #3A3530 !important; }
 </style>""", unsafe_allow_html=True)
 
-st.markdown("""<div class="page-intro">
-<div class="page-intro-title">Multidisciplinary Services</div>
-<div class="page-intro-sub">Decades of specialised expertise, brought directly to your home, project, or business across Costa Blanca Norte.</div>
-</div>""", unsafe_allow_html=True)
-
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -129,7 +127,7 @@ with col2:
 </ul>""", unsafe_allow_html=True)
 
 with col3:
-    with st.popover("Data Analytics\n& Web", use_container_width=True):
+    with st.popover("Data Analytics\n& Digital Solutions", use_container_width=True):
         st.markdown('<span class="svc-tagline">From complex spreadsheets to fully deployed web applications</span>', unsafe_allow_html=True)
         st.markdown("""<div class="svc-body">Two decades of experience in data architecture and knowledge engineering. We transform raw information into clean, structured tools and custom web applications.</div>
 <ul class="svc-items">
